@@ -1,4 +1,5 @@
-declare type InboxMessage = {
-	subject: string
-	content: string
+declare interface InboxMessage {
+	content: string,
+	alreadyRead: boolean,
+	id: string
 }

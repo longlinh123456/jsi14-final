@@ -17,6 +17,6 @@ module.exports = {
 		"semi": ["error", "never"],
 		"brace-style": ["error", "1tbs"],
 		"space-before-function-paren": ["error", "never"],
-		"object-curly-spacing": ["error", "never"]
+		"object-curly-spacing": ["error", "never"],
 	},
 }

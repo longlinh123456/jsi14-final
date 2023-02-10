@@ -1,9 +1,10 @@
 import Navbar from "../components/Navbar"
 import {useNavigate} from "react-router-dom"
-import {useUser, useFirebaseApp} from "reactfire"
+import {useUser, useSigninCheck} from "reactfire"
 import DashboardLink from "../components/DashboardLink"
 import Inbox from "../components/Inbox"
 import {useState} from "react"
+import FocusedMessage from "../components/FocusedMessage"
 
 const navbarLinks = [
 	{
@@ -14,9 +15,10 @@ const navbarLinks = [
 
 function Dashboard() {
 	const navigate = useNavigate()
-	const {status, data: user} = useUser()
-	// const messages = usecoll
-	// const {displayedLetter, setDisplayedLetter} = useState<string>()
+	const {status, data: user} = useSigninCheck()
+	const userData = useUser().data
+	const [displayedMessage, setDisplayedMessage] = useState("")
+	const [displayedMessageId, setDisplayedMessageId] = useState("")
 
 	if (status === "loading") {
 		return <div
@@ -24,21 +26,20 @@ function Dashboard() {
 			className="h-full w-full animate-pulse bg-slate-200"
 		></div>
 	} else {
-		if (!user) {
+		if (!user.signedIn) {
 			navigate("/login")
 		}
-		const inboxLink = `https://localhost:5173/inbox/${user?.uid}`
+		
+		const inboxLink = `https://localhost:5173/inbox/${userData?.uid}`
 		return (
 			<>
 				<div className="flex h-screen w-screen flex-col">
 					<Navbar title="Lời chúc tết" links={navbarLinks}/>
 					<div className="flex grow flex-col items-center justify-center bg-red-400">
 						<DashboardLink inboxLink={inboxLink} />
-						<Inbox />
+						<Inbox setMessage={setDisplayedMessage} setMessageId={setDisplayedMessageId}/>
+						{(displayedMessage !== "") && <FocusedMessage message={displayedMessage} setMessage={setDisplayedMessage} id={displayedMessageId}/>}
 					</div>
-					{/* <div className="absolute h-full w-full bg-black opacity-75">
-						
-					</div> */}
 				</div>
 			</>
 		)

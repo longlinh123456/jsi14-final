@@ -1,5 +1,5 @@
 import {Link, useNavigate} from "react-router-dom"
-import {useAuth, useUser} from "reactfire"
+import {useAuth} from "reactfire"
 
 type NavbarLink = {
 	display: string
@@ -14,9 +14,8 @@ interface Props {
 function Navbar({title, links = []}: Props) {
 	const navigate = useNavigate()
 	const auth = useAuth()
-	const {data: user} = useUser()
 	async function handleButton() {
-		if (user) {
+		if (auth.currentUser) {
 			await auth.signOut()
 		}
 		navigate("/")
@@ -50,7 +49,7 @@ function Navbar({title, links = []}: Props) {
 			</div>
 			<div className="my-10">
 				<button onClick={handleButton} className="m-5 h-4/5 w-[200px] rounded bg-red-800 p-[15px] hover:bg-red-700" type="button">
-					{auth.currentUser ? "Đăng xuất" : "Đăng nhập"}
+					<p className="text-textgrey">{auth.currentUser ? "Đăng xuất" : "Đăng nhập"}</p>
 				</button>
 			</div>
 		</div>

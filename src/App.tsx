@@ -1,4 +1,3 @@
-import {getApp} from "firebase/app"
 import {getAuth} from "firebase/auth"
 import {getFirestore} from "firebase/firestore"
 import {Suspense} from "react"
@@ -6,7 +5,7 @@ import {createBrowserRouter, RouterProvider} from "react-router-dom"
 import {AuthProvider, FirestoreProvider, useFirebaseApp} from "reactfire"
 import Dashboard from "./pages/Dashboard"
 import Login from "./pages/Login"
-import SignUp from "./pages/Signup"
+import SignUp from "./pages/SignUp"
 const router = createBrowserRouter([
 	{
 		path: "/login",

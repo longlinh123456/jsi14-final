@@ -10,15 +10,16 @@ function LoginForm() {
 		await signInWithRedirect(auth, provider)
 	}
 	async function handleLogin(email: string, password: string) {
-		signInWithEmailAndPassword(auth, email, password)
-	}
-	const showAlert = () => {
-		alert("called function")
+		try {
+			await signInWithEmailAndPassword(auth, email, password)
+		} catch (error: any) {
+			alert(error.code)
+		}
 	}
 	return (
 		<div className="mx-auto flex w-screen flex-1 flex-row items-center justify-center gap-x-5 bg-yellow-600 py-4">
 			<div className="w-2/5">
-				<LoginWithPassword title="Log In" buttonText="Log In" onLinkPress={showAlert} isInLogin={true} onButtonPress={handleLogin}/>
+				<LoginWithPassword title="Đăng nhập" buttonText="Đăng nhập" isInLogin={true} onButtonPress={handleLogin}/>
 			</div>
 			
 			<div onClick={handleGoogleLogin} className="flex h-[75px] flex-row items-center justify-center gap-x-3 rounded-lg bg-blue-400 px-5 font-sans text-lg font-semibold tracking-wide text-white hover:bg-blue-300">

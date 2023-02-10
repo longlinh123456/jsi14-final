@@ -1,14 +1,14 @@
 import {useState} from "react"
-interface ILoginWithPassword {
+import {Link} from "react-router-dom"
+interface Props {
 	title: string,
 	buttonText: string,
 	isInLogin: boolean,
-	onLinkPress: () => void
 	onButtonPress: (email: string, password: string) => void
 }
 
-function LoginWithPassword(props: ILoginWithPassword) {
-	const {title, buttonText, onLinkPress: onPress, isInLogin, onButtonPress} = props
+function LoginWithPassword(props: Props) {
+	const {title, buttonText, isInLogin, onButtonPress} = props
 	const [email, setEmail] = useState("")
 	const [password, setPassword] = useState("")
 	const [confirmPassword, setConfirmPassword] = useState("")
@@ -28,7 +28,7 @@ function LoginWithPassword(props: ILoginWithPassword) {
 						id="email"
 						type="email"
 						className="w-full rounded-lg border border-gray-200 bg-transparent p-4 outline-none"
-						placeholder="Enter your email address..."
+						placeholder="Nhập địa chỉ email"
 						value={email}
 						onChange={(e) => setEmail(e.target.value)}
 					/>
@@ -44,24 +44,18 @@ function LoginWithPassword(props: ILoginWithPassword) {
 						id="password"
 						type="password"
 						className="w-full rounded-lg border border-gray-200 bg-transparent p-4 outline-none"
-						placeholder="Enter your password"
+						placeholder="Nhập mật khẩu"
 						value={password}
 						onChange={(e) => setPassword(e.target.value)}
 					/>
 				</div>
 				{isInLogin &&
 				<div className="mb-5 flex flex-col items-start gap-y-3">
-					<label
-						htmlFor="password"
-						className="cursor-pointer text-sm font-medium"
-					>
-					Confirm Password
-					</label>
 					<input
-						id="password"
+						id="confirmPassword"
 						type="password"
 						className="w-full rounded-lg border border-gray-200 bg-transparent p-4 outline-none"
-						placeholder="Confirm your password"
+						placeholder="Nhập lại mật khẩu"
 						value={confirmPassword}
 						onChange={(e) => setConfirmPassword(e.target.value)}
 					/>
@@ -69,22 +63,25 @@ function LoginWithPassword(props: ILoginWithPassword) {
 				}
 				<div className="mb-5 flex items-center justify-end text-slate-400">
 					{isInLogin ?
-						<><p>Don't have an account?</p>
-							<p className="cursor-pointer px-2 text-blue-500 underline" onClick={onPress}>
-								Sign Up
-							</p>
+						<><p>Bạn chưa có tài khoản?</p>
+							<Link to="/signup">Đăng ký</Link>
 						</> :
-						<><p>Already have an account?</p>
-							<p className="cursor-pointer px-2 text-blue-500 underline" onClick={onPress}>
-								Log In
-							</p>
+						<><p>Bạn đã có tài khoản?</p>
+							<Link to="/login">Đăng nhập</Link>
 						</>
 					}
 				</div>
 				<button
 					type="button"
 					className="inline-flex h-[60px] w-full items-center justify-center rounded-lg bg-blue-500 px-8 py-4 font-sans font-semibold tracking-wide text-white"
-					onClick={() => onButtonPress(email, password)}
+					onClick={() => {
+						if (password !== confirmPassword) {
+							alert("Mật khẩu được nhập lại không trùng khớp")
+							return
+						}
+						onButtonPress(email, password)
+					}
+					}
 				>
 					{buttonText}
 				</button>
