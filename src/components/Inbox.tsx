@@ -1,12 +1,11 @@
-import {collection} from "firebase/firestore"
+import {collection, doc, updateDoc} from "firebase/firestore"
 import {useAuth, useFirestore, useFirestoreCollection, useFirestoreCollectionData} from "reactfire"
 
 interface Props {
 	setMessage: React.Dispatch<string>
-	setMessageId: React.Dispatch<string>
 }
 function Inbox(props: Props) {
-	const {setMessage, setMessageId} = props
+	const {setMessage} = props
 	const auth = useAuth()
 	const db = useFirestore()
 	const messagesRef = collection(db, "users", auth.currentUser?.uid as string, "inbox")
@@ -30,7 +29,10 @@ function Inbox(props: Props) {
 	function renderMessageButton(message: InboxMessage, index: number) {
 		return <button className="relative m-5 bg-red-500 hover:bg-red-400" key={index} onClick={() => {
 			setMessage(message.content)
-			setMessageId(message.id)
+			const messageRef = doc(db, "users", auth.currentUser?.uid as string, "inbox", message.id)
+			updateDoc(messageRef, {
+				alreadyRead: true
+			})
 		}}>
 			<svg className="h-full w-full" viewBox="154 198 308 396">
 				<g>

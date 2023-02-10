@@ -1,23 +1,11 @@
-import {doc, updateDoc} from "firebase/firestore"
 import React from "react"
-import {useAuth, useFirestore} from "reactfire"
 interface Props {
 	message: string,
 	setMessage: React.Dispatch<string>
-	id: string
 }
 
 function FocusedMessage(props: Props) {
-	const {message, setMessage, id} = props
-	const auth = useAuth()
-	const db = useFirestore()
-	function handleClose() {
-		const messageRef = doc(db, "users", auth.currentUser?.uid as string, "inbox", id)
-		updateDoc(messageRef, {
-			alreadyRead: true
-		})
-		setMessage("")
-	}
+	const {message, setMessage} = props
 	return (
 		<div className="fixed top-0 left-0 z-[2] flex h-full w-full items-center justify-center bg-black/50">
 			<div className="relative flex h-3/5 w-3/5 flex-col items-center justify-center overflow-auto rounded-md bg-red-400 opacity-[1]">
@@ -52,10 +40,9 @@ function FocusedMessage(props: Props) {
 				<p className="text-textgrey mx-5 text-center font-bold sm:my-1 sm:text-xl md:my-2 md:text-2xl lg:my-5 lg:text-3xl ">
 					{message}
 				</p>
-				<button type="button" className="text-textgrey absolute right-5 top-5 inline-flex items-center justify-center rounded-md bg-red-500 p-2 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" onClick={() => handleClose()}>
-					<span className="sr-only cursor-pointer">Close menu</span>
+				<button type="button" className="text-textgrey absolute right-5 top-5 z-[3] inline-flex items-center justify-center rounded-md bg-red-500 p-2 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" onClick={() => setMessage("")}>
 					<svg className="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+						<path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
 					</svg>
 				</button>
 			</div>

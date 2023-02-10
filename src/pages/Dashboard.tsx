@@ -18,7 +18,6 @@ function Dashboard() {
 	const {status, data: user} = useSigninCheck()
 	const userData = useUser().data
 	const [displayedMessage, setDisplayedMessage] = useState("")
-	const [displayedMessageId, setDisplayedMessageId] = useState("")
 
 	if (status === "loading") {
 		return <div
@@ -37,8 +36,8 @@ function Dashboard() {
 					<Navbar title="Lời chúc tết" links={navbarLinks}/>
 					<div className="flex grow flex-col items-center justify-center bg-red-400">
 						<DashboardLink inboxLink={inboxLink} />
-						<Inbox setMessage={setDisplayedMessage} setMessageId={setDisplayedMessageId}/>
-						{(displayedMessage !== "") && <FocusedMessage message={displayedMessage} setMessage={setDisplayedMessage} id={displayedMessageId}/>}
+						<Inbox setMessage={setDisplayedMessage}/>
+						{(displayedMessage !== "") && <FocusedMessage message={displayedMessage} setMessage={setDisplayedMessage}/>}
 					</div>
 				</div>
 			</>
