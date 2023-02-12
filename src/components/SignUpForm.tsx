@@ -13,7 +13,7 @@ function SignUpForm() {
 
 	}
 	return (
-		<div className="mx-auto flex w-screen flex-1 flex-row items-center justify-center gap-x-5 bg-yellow-600 py-4">
+		<div className="mx-auto flex w-screen flex-1 flex-row items-center justify-center gap-x-5 py-4">
 			<div className="w-2/5">
 				<LoginWithPassword title="Đăng ký" buttonText="Tạo tài khoản" isInLogin={false} onButtonPress={handleSignUp}/>
 			</div>

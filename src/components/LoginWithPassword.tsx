@@ -16,7 +16,7 @@ function LoginWithPassword(props: Props) {
 		<div>
 			<form
 				autoComplete="off"
-				className="w-full max-w-[600px] rounded-lg bg-white p-10 shadow"
+				className="w-full max-w-[600px] rounded-lg bg-white p-10 shadow-input"
 				aria-label="signup-form"
 			>
 				<h2 className="mb-10 text-center text-3xl font-bold">{title}</h2>
@@ -64,16 +64,16 @@ function LoginWithPassword(props: Props) {
 				<div className="mb-5 flex items-center justify-end text-slate-400">
 					{isInLogin ?
 						<><p>Bạn chưa có tài khoản?</p>
-							<Link to="/signup">Đăng ký</Link>
+							<Link className="text-textblue" to="/signup">Đăng ký</Link>
 						</> :
 						<><p>Bạn đã có tài khoản?</p>
-							<Link to="/login">Đăng nhập</Link>
+							<Link className="text-textblue" to="/login">Đăng nhập</Link>
 						</>
 					}
 				</div>
 				<button
 					type="button"
-					className="inline-flex h-[60px] w-full items-center justify-center rounded-lg bg-blue-500 px-8 py-4 font-sans font-semibold tracking-wide text-white"
+					className="inline-flex h-[60px] w-full items-center justify-center rounded-lg bg-blue-500 px-8 py-4 font-sans font-semibold tracking-wide text-white hover:bg-blue-400"
 					onClick={() => {
 						if (password !== confirmPassword) {
 							alert("Mật khẩu được nhập lại không trùng khớp")
