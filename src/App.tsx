@@ -1,9 +1,11 @@
 import {getAuth} from "firebase/auth"
 import {getFirestore} from "firebase/firestore"
-import {Suspense} from "react"
+import {Component, Suspense} from "react"
 import {createBrowserRouter, RouterProvider} from "react-router-dom"
 import {AuthProvider, FirestoreProvider, useFirebaseApp} from "reactfire"
+import Compon from "./pages/Compon"
 import Dashboard from "./pages/Dashboard"
+import LandingPage from "./pages/Landing"
 import Login from "./pages/Login"
 import SignUp from "./pages/SignUp"
 const router = createBrowserRouter([
@@ -18,7 +20,15 @@ const router = createBrowserRouter([
 	{
 		path: "/signup",
 		element: <SignUp />
-	}
+	},
+	{
+		path: "/compon",
+		element: <Compon />
+	},
+	{
+		path: "/landingpage",
+		element: <LandingPage />
+	},
 ])
 
 
