@@ -1,6 +1,6 @@
 import {useState} from "react"
 import {Link} from "react-router-dom"
-interface Props {
+export interface Props {
 	title: string,
 	buttonText: string,
 	isInLogin: boolean,
@@ -16,7 +16,7 @@ function LoginWithPassword(props: Props) {
 		<div>
 			<form
 				autoComplete="off"
-				className="w-full max-w-[600px] rounded-lg bg-white p-10 shadow-input"
+				className="shadow-input w-full max-w-[600px] rounded-lg bg-white p-10"
 				aria-label="signup-form"
 			>
 				<h2 className="mb-10 text-center text-3xl font-bold">{title}</h2>

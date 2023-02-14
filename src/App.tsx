@@ -1,32 +1,31 @@
 import {getAuth} from "firebase/auth"
 import {getFirestore} from "firebase/firestore"
-import {Component, Suspense} from "react"
 import {createBrowserRouter, RouterProvider} from "react-router-dom"
 import {AuthProvider, FirestoreProvider, useFirebaseApp} from "reactfire"
-import Compon from "./pages/Compon"
+import SendMessage from "./pages/SendMessage"
 import Dashboard from "./pages/Dashboard"
 import LandingPage from "./pages/Landing"
 import Login from "./pages/Login"
 import SignUp from "./pages/SignUp"
 const router = createBrowserRouter([
 	{
-		path: "/login",
+		path: "login",
 		element: <Login />
 	},
 	{
-		path: "/dashboard",
+		path: "dashboard",
 		element: <Dashboard />
 	},
 	{
-		path: "/signup",
+		path: "signup",
 		element: <SignUp />
 	},
 	{
-		path: "/compon",
-		element: <Compon />
+		path: "sendmessage/:uid",
+		element: <SendMessage />
 	},
 	{
-		path: "/landingpage",
+		path: "*",
 		element: <LandingPage />
 	},
 ])

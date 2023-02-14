@@ -1,5 +1,5 @@
 import React from "react"
-interface Props {
+export interface Props {
 	message: string,
 	setMessage: React.Dispatch<string>
 }
@@ -37,7 +37,7 @@ function FocusedMessage(props: Props) {
 					<polygon fillRule="evenodd" clipRule="evenodd" fill="#facc15" points="381.835 442.304 367.225 442.304 327.048 442.304 327.048 456.913 367.225 456.913 367.225 473.959 350.18 473.959 335.57 473.959 335.57 488.569 335.57 505.615 335.57 520.224 350.18 520.224 430.535 520.224 445.145 520.224 445.145 505.615 445.145 488.569 445.145 473.959 430.535 473.959 413.49 473.959 413.49 456.913 453.668 456.913 453.668 442.304 413.49 442.304 398.88 442.304 398.88 456.913 398.88 473.959 398.88 488.569 413.49 488.569 430.535 488.569 430.535 505.615 350.18 505.615 350.18 488.569 367.225 488.569 381.835 488.569 381.835 473.959 381.835 456.913"/>
 					<polygon fillRule="evenodd" clipRule="evenodd" fill="#facc15" points="508.455 442.304 493.846 442.304 453.668 442.304 453.668 456.913 493.846 456.913 493.846 473.959 476.801 473.959 462.19 473.959 462.19 488.569 462.19 505.615 462.19 520.224 476.801 520.224 557.155 520.224 571.766 520.224 571.766 505.615 571.766 488.569 571.766 473.959 557.155 473.959 540.11 473.959 540.11 456.913 580.288 456.913 580.288 442.304 540.11 442.304 525.5 442.304 525.5 456.913 525.5 473.959 525.5 488.569 540.11 488.569 557.155 488.569 557.155 505.615 476.801 505.615 476.801 488.569 493.846 488.569 508.455 488.569 508.455 473.959 508.455 456.913"/>
 				</svg>
-				<p className="text-textgrey mx-5 text-center font-bold sm:my-1 sm:text-xl md:my-2 md:text-2xl lg:my-5 lg:text-3xl ">
+				<p className="text-textgrey flex h-4/5 max-w-full flex-col justify-center break-words px-5 text-center font-bold sm:my-1 sm:text-xl md:my-2 md:text-2xl lg:my-5 lg:text-3xl">
 					{message}
 				</p>
 				<button type="button" className="text-textgrey absolute right-5 top-5 z-[3] inline-flex items-center justify-center rounded-md bg-red-500 p-2 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" onClick={() => setMessage("")}>

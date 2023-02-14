@@ -5,6 +5,7 @@ import DashboardLink from "../components/DashboardLink"
 import Inbox from "../components/Inbox"
 import {useState} from "react"
 import FocusedMessage from "../components/FocusedMessage"
+import Loading from "../components/Loading"
 
 const navbarLinks = [
 	{
@@ -20,16 +21,13 @@ function Dashboard() {
 	const [displayedMessage, setDisplayedMessage] = useState("")
 
 	if (status === "loading") {
-		return <div
-			aria-label="loading-skeleton"
-			className="h-full w-full animate-pulse bg-slate-200"
-		></div>
+		return <Loading />
 	} else {
 		if (!user.signedIn) {
 			navigate("/login")
 		}
 		
-		const inboxLink = `https://localhost:5173/inbox/${userData?.uid}`
+		const inboxLink = `http://localhost:5173/sendmessage/${userData?.uid}`
 		return (
 			<>
 				<div className="flex h-screen w-screen flex-col">

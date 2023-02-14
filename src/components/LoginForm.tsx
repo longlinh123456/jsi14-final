@@ -1,5 +1,5 @@
-import { GoogleAuthProvider, signInWithEmailAndPassword, signInWithRedirect } from "firebase/auth"
-import { useAuth } from "reactfire"
+import {GoogleAuthProvider, signInWithEmailAndPassword, signInWithRedirect} from "firebase/auth"
+import {useAuth} from "reactfire"
 import LoginWithPassword from "./LoginWithPassword"
 
 const provider = new GoogleAuthProvider()

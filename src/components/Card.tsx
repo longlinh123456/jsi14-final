@@ -1,34 +1,59 @@
+import {addDoc, collection} from "firebase/firestore"
+import {useNavigate, useParams} from "react-router-dom"
+import {useFirestore} from "reactfire"
+import {useState} from "react"
+
 function Card() {
-    return (
-        <div>
-            <form
-                autoComplete="off"
-                className="w-full max-w-[600px] rounded-lg bg-white p-2 shadow-input"
-                aria-label="signup-form">
-                <div className="flex flex-col items-start gap-y-3">
-                    <label htmlFor="email" className="cursor-pointer text-sm font-medium">
-                        Thiệp chúc Tết
-                    </label>
-                    <input
-                        className="w-full rounded-lg border border-gray-200 bg-transparent px-40 py-20 outline-none"
-                        placeholder="Gửi lời chúc của bạn"
-                    />
-                </div>
-            </form>
-        <br></br>
-            <button
-                type="button"
-                className="inline-flex h-[50px] w-full items-center justify-center rounded-lg bg-blue-500 px-8 py-4 font-sans font-semibold tracking-wide text-white hover:bg-blue-400"
-                onClick={() => {
+	const params = useParams()
+	const targetUid = params.uid
+	const navigate = useNavigate()
+	const db = useFirestore()
+	const [content, setContent] = useState("")
+	if (!targetUid) {
+		navigate("/")
+	}
 
-                }
-                }
-            >
-                Gửi!
-            </button>
-        </div>
+	async function SendMessage() {
+		const messagesRef = collection(db, "users", targetUid as string, "inbox")
+		await addDoc(messagesRef, {
+			content: content,
+			alreadyRead: false
+		})
+		alert("Gửi lời chúc thành công!")
+		navigate("/")
+	}
+	return (<>
+		<form
+			autoComplete="off"
+			className="shadow-input flex h-1/3 w-2/5 flex-col items-center justify-center gap-y-3 rounded-lg bg-white px-10 py-3"
+			aria-label="signup-form"
+			onSubmit={(e) => {
+				e.preventDefault()
+				SendMessage()
+			}}>
+			<label htmlFor="email" className="cursor-pointer text-sm font-medium">
+                Gửi thiệp chúc Tết (giới hạn 200 ký tự)
+			</label>
+			<textarea
+				rows={14}
+				cols={10}
+				wrap="soft"
+				className="w-full resize-none rounded-lg border border-gray-200 bg-transparent p-1 text-center outline-none"
+				placeholder="Nhập lời chúc"
+				onChange={(e) => setContent(e.target.value)}
+				maxLength={200}
+				required={true}
+			/>
+			<button
+				type="submit"
+				className="inline-flex h-[50px] w-full items-center justify-center rounded-lg bg-blue-500 px-8 py-4 font-sans font-semibold tracking-wide text-white hover:bg-blue-400"
+			>
+                Gửi
+			</button>
+		</form>
+	</>
 
-    )
+	)
 }
 
 export default Card

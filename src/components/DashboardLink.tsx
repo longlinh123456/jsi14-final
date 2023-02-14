@@ -1,12 +1,12 @@
 import {useState} from "react"
-interface Props {
+export interface Props {
 	inboxLink: string
 }
 
 function DashboardLink({inboxLink}: Props) {
 	const [copied, setCopied] = useState(false)
 	return (
-		<div className="my-2 flex h-[5%] w-1/2 items-center justify-center rounded-md bg-white border-0.5 border-black">
+		<div className="border-0.5 my-2 flex h-[5%] w-1/2 items-center justify-center rounded-md border-black bg-white">
 			<span>
 				Link hộp thư chúc Tết:
 			</span>
