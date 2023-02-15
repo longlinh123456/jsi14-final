@@ -42,7 +42,7 @@ function Navbar({title, links = []}: Props) {
 				<img className="max-h-[90%] max-w-[90%] p-2" src="https://media-public.canva.com/rEYeM/MAFS1MrEYeM/1/tl.png" alt=""/>
 				<h1 className="text-textyellow m-5 inline text-3xl font-bold">{title}</h1>
 			</div>
-			<div className="absolute left-1/2 m-5 flex -translate-x-1/2 transform-gpu items-center align-middle">
+			<div className="absolute left-1/2 flex -translate-x-1/2 transform-gpu items-center align-middle">
 				{links.map((link, index) => 
 					<div className="mx-2 flex items-center justify-center text-center align-middle" key={index}>
 						<Link className="text-textyellow h-4/5 w-[200px] rounded bg-red-700 py-2 text-xl hover:bg-red-600" to={link.navigateTo}>{link.display}</Link>

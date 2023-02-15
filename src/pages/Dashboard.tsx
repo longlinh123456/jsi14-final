@@ -27,7 +27,7 @@ function Dashboard() {
 			navigate("/login")
 		}
 		
-		const inboxLink = `http://localhost:5173/sendmessage/${userData?.uid}`
+		const inboxLink = `${window.location.origin}/sendmessage/${userData?.uid}`
 		return (
 			<>
 				<div className="flex h-screen w-screen flex-col">

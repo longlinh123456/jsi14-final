@@ -63,10 +63,10 @@ function LoginWithPassword(props: Props) {
 				}
 				<div className="mb-5 flex items-center justify-end text-slate-400">
 					{isInLogin ?
-						<><p>Bạn chưa có tài khoản?</p>
+						<><p>Bạn chưa có tài khoản?&nbsp;</p>
 							<Link className="text-textblue" to="/signup">Đăng ký</Link>
 						</> :
-						<><p>Bạn đã có tài khoản?</p>
+						<><p>Bạn đã có tài khoản?&nbsp;</p>
 							<Link className="text-textblue" to="/login">Đăng nhập</Link>
 						</>
 					}

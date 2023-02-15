@@ -17,13 +17,13 @@ function LoginForm() {
 		}
 	}
 	return (
-		<div className="flex flex-col">
-			<div className="mx-auto flex w-screen flex-1 flex-row items-center justify-center gap-x-5 py-4">
+		<div className="flex flex-col items-center justify-center">
+			<div className="flex w-screen flex-1 flex-row items-center justify-center gap-x-5 py-4">
 				<div className="w-2/5">
 					<LoginWithPassword title="Đăng nhập" buttonText="Đăng nhập" isInLogin={true} onButtonPress={handleLogin} />
 				</div>
 			</div>
-			<div onClick={handleGoogleLogin} className="mx-auto flex h-[75px] flex-row items-center justify-center gap-x-3 rounded-lg bg-blue-400 px-5 font-sans text-lg font-semibold tracking-wide text-white hover:bg-blue-300">
+			<div onClick={handleGoogleLogin} className="flex h-[75px] cursor-pointer flex-row items-center justify-center gap-x-3 rounded-lg bg-blue-400 px-5 font-sans text-lg font-semibold tracking-wide text-white hover:bg-blue-300">
 				<svg className="h-3/5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
 					<path d="M30.0014 16.3109C30.0014 15.1598 29.9061 14.3198 29.6998 13.4487H16.2871V18.6442H24.1601C24.0014 19.9354 23.1442 21.8798 21.2394 23.1864L21.2127 23.3604L25.4536 26.58L25.7474 26.6087C28.4458 24.1665 30.0014 20.5731 30.0014 16.3109Z" fill="#4285F4" />
 					<path d="M16.2863 29.9998C20.1434 29.9998 23.3814 28.7553 25.7466 26.6086L21.2386 23.1863C20.0323 24.0108 18.4132 24.5863 16.2863 24.5863C12.5086 24.5863 9.30225 22.1441 8.15929 18.7686L7.99176 18.7825L3.58208 22.127L3.52441 22.2841C5.87359 26.8574 10.699 29.9998 16.2863 29.9998Z" fill="#34A853" />
