@@ -27,16 +27,23 @@ function Landing() {
 					<div className="mx-auto w-4/5">
 						<br></br><br></br>
 						<p className="pb-2 text-3xl">1. Đăng Ký/Đăng Nhập Tài Khoản</p>
-						<p className="text-2xl">Đầu tiên các bạn cần đăng ký/đăng nhập tài khoản bên trên phía phải của trang web để sử dụng dịch vụ.</p>
+						<p className="text-2xl">Đầu tiên các bạn ấn vào nút đăng nhập bên trên phía phải của trang web. Sau đó đăng nhập tài khoản, nếu chưa có thì ấn vào mục đăng ký.</p>
 						<br></br>
-						<img className="border-1 mx-auto w-4/6 rounded-2xl border-black" src="https://scontent-sin6-4.xx.fbcdn.net/v/t1.15752-9/330959480_1196573687913131_4876886365461415624_n.png?_nc_cat=103&ccb=1-7&_nc_sid=ae9488&_nc_eui2=AeHpXJYb8OMRqAN3RHwYebvVGa2vwYZgxbkZra_BhmDFuV0SNjycv5Gf-XzmWCEYYqJ5V5LEIw6c1sv_TtcPJ4Q9&_nc_ohc=iaPSl-LlU80AX_TSuX_&_nc_ht=scontent-sin6-4.xx&oh=03_AdQBoIywNs6NvDiJE0eon_q59uSAMB2xiKH4pO33nezNoA&oe=6411BC65"></img>
+						<img className="border-1 mx-auto w-4/6 rounded-2xl border-black" src="https://scontent-sin6-1.xx.fbcdn.net/v/t1.15752-9/331103554_1225341004748904_3915740838392289158_n.png?_nc_cat=107&ccb=1-7&_nc_sid=ae9488&_nc_ohc=lh96cs23UP8AX88NtIc&_nc_oc=AQlEuFKFKvtlYFV8UlZPzhjdFSzK_yb1oLasYM4GYYAy4f9kp6RpQRV5KAQWm0_L-ko&_nc_ht=scontent-sin6-1.xx&oh=03_AdTl6YsSUcbvidxuHxMInaa4i3lQqJeM0n_1W0zquYRvDQ&oe=64130D6C"></img>
 						<br></br>
+						<img className="border-1 mx-auto w-4/6 rounded-2xl border-black" src="https://scontent-sin6-1.xx.fbcdn.net/v/t1.15752-9/331156667_6287175928005469_417759695961086300_n.png?_nc_cat=111&ccb=1-7&_nc_sid=ae9488&_nc_ohc=3UONN7gBOZgAX_Px6VQ&tn=KHkTtSalEX58tRRD&_nc_ht=scontent-sin6-1.xx&oh=03_AdREmB49vacpL0YZVb6c_rWTL8fcNw63W-xBxjmYIo8BsA&oe=641310FA"></img>
+						<br></br><br></br>
 						<p className="pb-2 text-3xl">2. Lấy Link Từ Trang Dashboard</p>
-						<p className="text-2xl">Sau đó các bạn vào trang Dashboard và ấn vào nút màu xanh để sao chép link</p>
+						<p className="text-2xl">Sau đó các bạn vào trang Dashboard và ấn vào nút màu xanh để sao chép link.</p>
 						<br></br>
-						<img className="border-1 mx-auto w-4/6 rounded-2xl border-black" src="https://scontent.fhan5-10.fna.fbcdn.net/v/t1.15752-9/330293853_1309521456557337_1837142484630922710_n.png?_nc_cat=101&ccb=1-7&_nc_sid=ae9488&_nc_eui2=AeH8DsRxeG7pxbmc_3jyyEdgRdC-1jkQIc1F0L7WORAhzQtudhm5N6YIT0qsrKpEgAL8iRChvy2D1UgchpmYe1fk&_nc_ohc=XUrEf6beu-AAX_qoAmT&_nc_ht=scontent.fhan5-10.fna&oh=03_AdRsZlITCKfOVQd_v14qrGJymgpnlPR6HrVAuLSrz5imjA&oe=6411B324"></img>
+						<img className="border-1 mx-auto w-4/6 rounded-2xl border-black" src="https://scontent-sin6-3.xx.fbcdn.net/v/t1.15752-9/331169006_1132923977402938_7070325821761717989_n.png?_nc_cat=106&ccb=1-7&_nc_sid=ae9488&_nc_ohc=buNBoRs4J5AAX-hDeRF&_nc_ht=scontent-sin6-3.xx&oh=03_AdQJqyDumQzd2ZtZ9xgw_ORtzO3rDpMJ9cxVcq7DF436Xg&oe=6412FEAD"></img>
+						<br></br><br></br>
+						<p className="pb-2 text-3xl">3. Viết Lời Chúc</p>
+						<p className="text-2xl">Sau khi sao chép link, các bạn dán nó sang một trang khác rồi viết lời bạn muốn nói người khác và nhấn nút để gửi.</p>
 						<br></br>
-						<p className="pb-2 text-3xl">3. Đăng Link Lên Mạng Xã Hội</p>
+						<img className="border-1 mx-auto w-4/6 rounded-2xl border-black" src="https://scontent.fhan5-1.fna.fbcdn.net/v/t1.15752-9/331226441_564760775715578_4625775485136862666_n.png?_nc_cat=100&ccb=1-7&_nc_sid=ae9488&_nc_ohc=7RuVkVftaYgAX9SgJaT&_nc_oc=AQnXj42-zdTJaS_K7eW6xTnvUspx8HLUf6l9WGRQAz1VnIRri3oHAVBF1weY2HQXY9U&_nc_ht=scontent.fhan5-1.fna&oh=03_AdRHRrDRtd1Svm2y-R2HvBdxT2I4Y7adGIeZUgmfvWtmzQ&oe=64131923"></img>
+						<br></br><br></br>
+						<p className="pb-2 text-3xl">4. Đăng Link Lên Mạng Xã Hội</p>
 						<p className="text-2xl">Cuối cùng các bạn chỉ cần đăng tải đường link lên trang mạng xã hội và kêu gọi người vào gửi lời chúc Tết. Như vậy là hoàn thành, chúc các bạn thành công.</p>
 						<br></br>
 						<img className="border-1 mx-auto w-4/6 rounded-2xl border-black" src="https://scontent.fhan5-9.fna.fbcdn.net/v/t1.15752-9/330660726_3548118775421366_3585495675821649332_n.png?_nc_cat=109&ccb=1-7&_nc_sid=ae9488&_nc_eui2=AeHcw4F6qHFFZH7o1KWmU7Ur2n7LJxJ5RwXafssnEnlHBUxWwF_Sxrm-u4WN9jlmU-E-3M-AF39n0AUKwWGXLer0&_nc_ohc=nFWHH5S6NfcAX-D6g3M&_nc_ht=scontent.fhan5-9.fna&oh=03_AdR0m2hcSHugoBsMgUwEaWdhaVH-Fs2DRxUTRqa9fjT2SQ&oe=6411CC9D"></img>
