@@ -56,7 +56,7 @@ function Landing() {
 					<div className="mb-6 md:mb-0">
 						<a href="#" className="flex items-center">
 							<img src="https://media-public.canva.com/rEYeM/MAFS1MrEYeM/1/tl.png" className="mr-3 h-8" alt="Cat Logo" />
-							<span className="dark:text-textyellow self-center whitespace-nowrap text-2xl font-semibold">LT</span>
+							<span className="dark:text-textyellow self-center whitespace-nowrap text-2xl font-semibold">Lời chúc tết</span>
 						</a>
 					</div>
 					<div className="grid grid-cols-2 gap-8 sm:grid-cols-3 sm:gap-6">
