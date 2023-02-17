@@ -13,14 +13,16 @@ function SignUpForm() {
 		try {
 			await createUserWithEmailAndPassword(auth, email, password)
 		} catch (error: any) {
-			alert(error.code)
+			alert(`Đăng ký thất bại, lỗi: ${error.code}`)
 		}
 
 	}
 	return (
-		<div className="mx-auto flex w-screen flex-1 flex-col items-center justify-center gap-x-5 gap-y-3 py-4">
-			<div className="w-2/5">
-				<LoginWithPassword title="Đăng ký" buttonText="Tạo tài khoản" isInLogin={false} onButtonPress={handleSignUp}/>
+		<div className="flex flex-col items-center justify-center">
+			<div className="flex w-screen flex-1 flex-row items-center justify-center gap-x-5 py-4">
+				<div className="w-2/5">
+					<LoginWithPassword title="Đăng ký" buttonText="Tạo tài khoản" isInLogin={false} onButtonPress={handleSignUp}/>
+				</div>
 			</div>
 			<div onClick={handleGoogleLogin} className="flex h-[75px] cursor-pointer flex-row items-center justify-center gap-x-3 rounded-lg bg-blue-400 px-5 font-sans text-lg font-semibold tracking-wide text-white hover:bg-blue-300">
 				<svg className="h-3/5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">

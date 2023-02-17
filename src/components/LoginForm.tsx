@@ -13,7 +13,7 @@ function LoginForm() {
 		try {
 			await signInWithEmailAndPassword(auth, email, password)
 		} catch (error: any) {
-			alert(error.code)
+			alert(`Đăng nhập thất bại, lỗi: ${error.code}`)
 		}
 	}
 	return (
