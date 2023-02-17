@@ -38,7 +38,7 @@ function LoginWithPassword(props: Props) {
 						htmlFor="password"
 						className="cursor-pointer text-sm font-medium"
 					>
-					Password
+					Mật khẩu
 					</label>
 					<input
 						id="password"
@@ -49,7 +49,7 @@ function LoginWithPassword(props: Props) {
 						onChange={(e) => setPassword(e.target.value)}
 					/>
 				</div>
-				{isInLogin &&
+				{!isInLogin &&
 				<div className="mb-5 flex flex-col items-start gap-y-3">
 					<input
 						id="confirmPassword"
@@ -75,11 +75,12 @@ function LoginWithPassword(props: Props) {
 					type="button"
 					className="inline-flex h-[60px] w-full items-center justify-center rounded-lg bg-blue-500 px-8 py-4 font-sans font-semibold tracking-wide text-white hover:bg-blue-400"
 					onClick={() => {
-						if (password !== confirmPassword) {
-							alert("Mật khẩu được nhập lại không trùng khớp")
+						if (isInLogin || password === confirmPassword) {
+							onButtonPress(email, password)
 							return
+						} else {
+							alert("Mật khẩu được nhập lại không trùng khớp")
 						}
-						onButtonPress(email, password)
 					}
 					}
 				>
