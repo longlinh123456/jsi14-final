@@ -25,7 +25,7 @@ function Card() {
 	return (<>
 		<form
 			autoComplete="off"
-			className="shadow-input flex h-1/3 w-2/5 flex-col items-center justify-center gap-y-3 rounded-lg bg-white px-10 py-3"
+			className="flex h-1/3 w-2/5 flex-col items-center justify-center gap-y-3 rounded-lg bg-white px-10 py-3 shadow-input"
 			aria-label="signup-form"
 			onSubmit={(e) => {
 				e.preventDefault()

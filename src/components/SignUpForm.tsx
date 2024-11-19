@@ -1,4 +1,4 @@
-import {createUserWithEmailAndPassword, GoogleAuthProvider, signInWithRedirect} from "firebase/auth"
+import {createUserWithEmailAndPassword, GoogleAuthProvider, signInWithPopup} from "firebase/auth"
 import {useAuth} from "reactfire"
 import LoginWithPassword from "./LoginWithPassword"
 
@@ -7,7 +7,7 @@ const provider = new GoogleAuthProvider()
 function SignUpForm() {
 	const auth = useAuth()
 	async function handleGoogleLogin() {
-		await signInWithRedirect(auth, provider)
+		await signInWithPopup(auth, provider)
 	}
 	const handleSignUp = async(email: string, password: string) => {
 		try {

@@ -6,7 +6,7 @@ export interface Props {
 function DashboardLink({inboxLink}: Props) {
 	const [copied, setCopied] = useState(false)
 	return (
-		<div className="border-0.5 my-2 flex h-[5%] w-1/2 items-center justify-center rounded-md border-black bg-white">
+		<div className="my-2 flex h-[5%] w-1/2 items-center justify-center rounded-md border-0.5 border-black bg-white">
 			<span>
 				Link hộp thư chúc Tết:
 			</span>

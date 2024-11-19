@@ -16,7 +16,7 @@ function LoginWithPassword(props: Props) {
 		<div>
 			<form
 				autoComplete="off"
-				className="shadow-input w-full max-w-[600px] rounded-lg bg-white p-10"
+				className="w-full max-w-[600px] rounded-lg bg-white p-10 shadow-input"
 				aria-label="signup-form"
 			>
 				<h2 className="mb-10 text-center text-3xl font-bold">{title}</h2>

@@ -28,7 +28,7 @@ const router = createBrowserRouter([
 		path: "*",
 		element: <LandingPage />
 	},
-], {basename: "/jsi14-cringe"})
+], {basename: "/jsi14-final"})
 
 
 function App() {
